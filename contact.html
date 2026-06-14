@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - DigitalWorldByMehak</title>
+  <link rel="icon" type="image/png" href="image.png">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <a href="index.html" class="site-logo">
+      <img src="image.png" alt="Logo" class="logo-header">
+      <span>DigitalWorldByMehak</span>
+    </a>
+    <!-- Hamburger Menu Button for Mobile -->
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span>
+    </button>
+    <nav class="site-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+         <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="mobile-btn desktop-hide">
+        <a href="contact.html" class="btn-primary">Get Started</a>
+      </div>
+    </nav>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn-primary">Get Started</a>
+    </div>
+  </header>
+
+  <main class="contact-page">
+    <section class="contact-hero page-hero">
+      <div class="hero-content" data-aos="zoom-in">
+        <h1>Contact <span>Us</span></h1>
+        <p class="hero-copy">
+          Have a project in mind? Let’s connect and create something amazing
+          together.
+        </p>
+      </div>
+    </section>
+
+    <section class="contact-section section-block content-wrapper">
+      <div class="contact-layout">
+        <div class="contact-info" data-aos="fade-right">
+          <h2>Get in Touch</h2>
+          <p>Email: mehaksaini1343@gmail.com</p>
+          <p>Phone: +91 8950572345</p>
+          <p>Location: India</p>
+          <p>
+            We are always ready to help you grow your business with our
+            digital services. Feel free to reach out anytime.
+          </p>
+        </div>
+
+        <div class="contact-form" data-aos="fade-left" data-aos-delay="200">
+          <form id="sheet-form" action="#" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Your Email" required />
+            <input type="tel" name="phone" placeholder="Contact No." required />
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <input type="hidden" name="source" value="Contact Page">
+            <button type="submit" class="btn-primary">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="extra-section extra content-wrapper" data-aos="fade-up">
+      <h2>Let’s Build Something Great</h2>
+      <p>
+        Whether you need a website, marketing strategy, or creative design,
+        DigitalWorldByMehak is here to turn your ideas into reality.
+      </p>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="footer">
+    <div class="content-wrapper">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h3>DigitalWorldByMehak</h3>
+          <p>Your partner for digital growth & creativity.</p>
+        </div>
+        <div class="footer-column">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="services.html">Marketing</a></li>
+            <li><a href="services.html">Designing</a></li>
+            <li><a href="services.html">Digital Gifts</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact</h3>
+          <p>Email: mehaksaini1343@gmail.com</p>
+          <p>Phone: +91 8950572345</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright 2026 DigitalWorldByMehak | All Rights Reserved</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- AOS Animation JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Mobile Menu JS -->
+  <script>
+    document.querySelector('.nav-toggle').addEventListener('click', function() {
+      this.classList.toggle('open');
+      document.querySelector('.site-nav').classList.toggle('open');
+    });
+
+    // AOS Animation Initialize
+    AOS.init({
+      duration: 800,
+      offset: 100,
+      once: true
+    });
+
+    // Form Data to Google Sheets JS
+    const scriptURL = 'https://script.google.com/macros/s/AKfycby_krEK20pqpMtRoaFWNry2q1EKZlmN7VTLuQ2RrevEnRG2LOmOWh26aLIpeHmET4lo5w/exec';
+    const form = document.getElementById('sheet-form');
+    
+    if (form) {
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        const submitButton = form.querySelector('button[type="submit"]');
+        submitButton.innerText = "Sending...";
+        submitButton.disabled = true;
+
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+            alert('Thank you! Your message has been sent.');
+            form.reset();
+            submitButton.innerText = "Send Message";
+            submitButton.disabled = false;
+          })
+          .catch(error => {
+            console.error('Error!', error.message);
+            alert('Oops! Something went wrong.');
+            submitButton.innerText = "Send Message";
+            submitButton.disabled = false;
+          });
+      });
+    }
+  </script>
+
+</body>
+</html>

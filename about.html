@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Digital World By Mehak</title>
+  <link rel="icon" type="image/png" href="image.png">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="index.html" class="site-logo">
+      <img src="image.png" alt="Logo" class="logo-header">
+      <span>DigitalWorldByMehak</span>
+    </a>
+    <!-- Hamburger Menu Button for Mobile -->
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span>
+    </button>
+    <nav class="site-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="mobile-btn desktop-hide">
+        <a href="contact.html" class="btn-primary">Get Started</a>
+      </div>
+    </nav>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn-primary">Get Started</a>
+    </div>
+  </header>
+
+  <main class="about-page">
+    <section class="about-hero page-hero">
+      <div class="hero-content" data-aos="fade-up">
+        <h1>About <span>DigitalWorldByMehak</span></h1>
+        <p class="hero-copy">
+          Your trusted partner for digital growth, creative design, and personalized digital experiences.
+        </p>
+      </div>
+    </section>
+
+    <section class="about-section section-block">
+      <div class="about-layout content-wrapper">
+        <div class="about-image" data-aos="fade-right">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900" alt="About digital services" />
+        </div>
+        <div class="about-text" data-aos="fade-left" data-aos-delay="200">
+          <h2>Who We Are</h2>
+          <p>
+            DigitalWorldByMehak is a creative digital service platform that
+            helps businesses and individuals build a strong online
+            presence. We specialize in digital marketing, designing, and
+            digital gifting solutions.
+          </p>
+          <p>
+            Our goal is to combine creativity with strategy to deliver
+            impactful results that help brands grow and stand out in the
+            digital world.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mission section-block">
+      <div class="section-header content-wrapper" data-aos="zoom-in">
+        <h2>Our Mission</h2>
+        <p>
+          Our mission is to empower businesses and individuals with
+          innovative digital solutions. We aim to deliver high-quality
+          services that enhance brand identity, increase visibility, and
+          create memorable digital experiences.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="content-wrapper">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h3>DigitalWorldByMehak</h3>
+          <p>Your partner for digital growth & creativity.</p>
+        </div>
+        <div class="footer-column">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="services.html">Marketing</a></li>
+            <li><a href="services.html">Designing</a></li>
+            <li><a href="services.html">Digital Gifts</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact</h3>
+          <p>Email: mehaksaini1343@gmail.com</p>
+          <p>Phone: +91 8950572345</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright 2026 DigitalWorldByMehak | All Rights Reserved</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- AOS Animation JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Mobile Menu JS -->
+  <script>
+    document.querySelector('.nav-toggle').addEventListener('click', function() {
+      this.classList.toggle('open');
+      document.querySelector('.site-nav').classList.toggle('open');
+    });
+
+    // AOS Animation Initialize
+    AOS.init({
+      duration: 800,
+      offset: 100,
+      once: true
+    });
+  </script>
+
+</body>
+</html>
