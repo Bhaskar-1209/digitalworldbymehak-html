@@ -232,8 +232,7 @@ button:hover {
 
 .home-page .page-hero {
   position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 0.82fr) minmax(520px, 1.18fr);
+  display: flex;
   align-items: center;
   gap: 46px;
   min-height: 760px;
@@ -246,7 +245,7 @@ button:hover {
 }
 
 .home-page .hero-content {
-  width: 100%;
+  flex: 0 1 45%;
   max-width: none;
   position: relative;
   z-index: 2;
@@ -431,6 +430,20 @@ button:hover {
   position: relative;
   min-height: 590px;
   z-index: 1;
+}
+
+.home-page .hero-visual {
+  flex: 1 1 55%;
+  min-height: 0;
+}
+
+.hero-visual img {
+  display: block;
+  width: 100%;
+  /* height: 590px; */
+  object-fit: cover;
+  border-radius: 28px;
+  box-shadow: 0 24px 60px rgba(21, 25, 58, 0.18);
 }
 
 .laptop {
@@ -765,6 +778,13 @@ button:hover {
   background: var(--soft);
   color: var(--brand);
   font-weight: 900;
+}
+
+.hero-content.aos-init.aos-animate, .hero-visual.aos-init.aos-animate {
+  flex: 0 0 50%;
+  opacity: 1;
+  transform: none;
+
 }
 
 .hero-features h3 {
@@ -1399,7 +1419,7 @@ button:hover {
   }
 
   .home-page .page-hero {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     min-height: auto;
     text-align: center;
     padding-top: 60px;
@@ -1423,7 +1443,13 @@ button:hover {
 }
   .hero-visual {
     width: 100%;
-    min-height: 500px;
+    min-height: 0;
+  }
+
+  .hero-visual img {
+    height: min(62vw, 500px);
+    /* On smaller screens the large desktop shadow appears as grey side bands. */
+    box-shadow: none;
   }
 
   .laptop {
@@ -1775,6 +1801,11 @@ button:hover {
     overflow: hidden;
     transform: none;
     margin-bottom: 0;
+}
+
+.hero-visual img {
+    height: auto;
+    aspect-ratio: 16 / 10;
 }
 
 .laptop {
